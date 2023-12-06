@@ -1,44 +1,8 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import axios from 'axios';
-const inter = Inter({ subsets: ['latin'] })
 import Head from 'next/head';
-export async function getServerSideProps() {
-    const accessToken = process.env.GITHUB_ACCESS_TOKEN;
-    const username = 'True-Fox'; 
-  
-    try {
-      const response = await axios.get(`https://api.github.com/users/${username}/repos`, {
-        headers: {
-          Authorization: `token ${accessToken}`,
-        },
-      });
-  
-      const repositories = response.data;
-      if(repositories){
-        console.log("Got repos!")
-      }else{
-        console.log("Getting Repos failed!")
-      }
-  
-      return {
-        props: {
-          repositories,
-        },
-      };
-    } catch (error) {
-      console.error('Error fetching data:', error.message);
-      return {
-        props: {
-          repositories: [],
-        },
-      };
-    }
-  }
-
 
 const Projects = ({ repositories }) => {
-    return (
+  return (
     <>
       <Head>
         <title>Ambhikesh | Projects</title>
@@ -47,19 +11,52 @@ const Projects = ({ repositories }) => {
         <span className='text-3xl'>Projects</span>
         <ul>
           {repositories.map((repo) => (
-            <div  key={repo.id} className='m-5 rounded-xl hover:shadow-2xl hover:scale-105 transition p-2'>
-                <a href={"https://github.com/True-Fox/"+repo.name}>
+            <div key={repo.id} className='m-5 rounded-xl hover:shadow-2xl hover:scale-105 transition p-2'>
+              <a href={"https://github.com/True-Fox/" + repo.name}>
                 <li>
-                    <div className='ml-2 text-lg no-underline'>{repo.name}</div>
-                    <div className="ml-2 text-slate-600">{repo.description}</div>
+                  <div className='ml-2 text-lg no-underline'>{repo.name}</div>
+                  <div className="ml-2 text-slate-600">{repo.description}</div>
                 </li>
-                </a>
+              </a>
             </div>
           ))}
         </ul>
       </div>
-      </>
-    );
-  };
+    </>
+  );
+};
+
+export async function getStaticProps() {
+  const accessToken = process.env.GITHUB_ACCESS_TOKEN;
+  const username = 'True-Fox';
+
+  try {
+    const response = await axios.get(`https://api.github.com/users/${username}/repos`, {
+      headers: {
+        Authorization: `token ${accessToken}`,
+      },
+    });
+
+    const repositories = response.data;
+    if (repositories) {
+      console.log("Got repos!");
+    } else {
+      console.log("Getting Repos failed!");
+    }
+
+    return {
+      props: {
+        repositories,
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error.message);
+    return {
+      props: {
+        repositories: [],
+      },
+    };
+  }
+}
 
 export default Projects;
