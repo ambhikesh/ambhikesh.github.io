@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: {
+    publicDirectory: '/ambhikesh.github.io'
+  },
   reactStrictMode: true,
 }
 
