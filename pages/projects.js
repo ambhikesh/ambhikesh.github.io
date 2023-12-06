@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Head from 'next/head';
 
-const Projects = ({ repositories }) => {
+/*const Projects = ({ repositories }) => {
   return (
     <>
       <Head>
@@ -57,6 +57,70 @@ export async function getStaticProps() {
       },
     };
   }
+}
+*/
+
+const Projects = () =>{
+  return(
+    <>
+          <Head>
+        <title>Ambhikesh | Projects</title>
+      </Head>
+      <div className='m-5'>
+        <span className='text-3xl'>Projects</span>
+        <ul>
+            <div className='m-5 rounded-xl hover:shadow-2xl hover:scale-105 transition p-2'>
+              <a href={"https://github.com/True-Fox/File-Search-and-Execution-Tool"}>
+                <li>
+                  <div className='ml-2 text-lg no-underline'>File-Search-and-Execution-Tool</div>
+                  <div className="ml-2 text-slate-600">The tool simplify the process of searching directories for specific files or file types on Unix/Linux systems.</div>
+                </li>
+              </a>
+            </div>
+            <div className='m-5 rounded-xl hover:shadow-2xl hover:scale-105 transition p-2'>
+              <a href={"https://github.com/True-Fox/Book-sharing-system "}>
+                <li>
+                  <div className='ml-2 text-lg no-underline'>Book-sharing-system </div>
+                  <div className="ml-2 text-slate-600">A Web application built using django framework that let users exchange without centralized institutions like libraries.</div>
+                </li>
+              </a>
+            </div>
+            <div className='m-5 rounded-xl hover:shadow-2xl hover:scale-105 transition p-2'>
+              <a href={"https://github.com/True-Fox/WikiPy-Search"}>
+                <li>
+                  <div className='ml-2 text-lg no-underline'>WikiPy-Search </div>
+                  <div className="ml-2 text-slate-600">A Command line tool that lets you read the summary of the query you provide from wikipedia</div>
+                </li>
+              </a>
+            </div>
+            <div className='m-5 rounded-xl hover:shadow-2xl hover:scale-105 transition p-2'>
+              <a href={"https://github.com/True-Fox/Spotify-to-Mp3"}>
+                <li>
+                  <div className='ml-2 text-lg no-underline'>Spotify-to-Mp3</div>
+                  <div className="ml-2 text-slate-600">A python script that downloads songs from the given URI of a Spotify playlist</div>
+                </li>
+              </a>
+            </div>
+            <div className='m-5 rounded-xl hover:shadow-2xl hover:scale-105 transition p-2'>
+              <a href={"https://github.com/True-Fox/JustEvs "}>
+                <li>
+                  <div className='ml-2 text-lg no-underline'>JustEvs </div>
+                  <div className="ml-2 text-slate-600">A Web application built using MERN stack which promotes the usage of electric vehicles.</div>
+                </li>
+              </a>
+            </div>
+            <div className='m-5 rounded-xl hover:shadow-2xl hover:scale-105 transition p-2'>
+              <a href={"https://github.com/True-Fox/Virtual-Casino"}>
+                <li>
+                  <div className='ml-2 text-lg no-underline'>Virtual-Casino</div>
+                  <div className="ml-2 text-slate-600">An attempt at making casino games using C programming</div>
+                </li>
+              </a>
+            </div>
+        </ul>
+      </div>
+    </>
+  )
 }
 
 export default Projects;
