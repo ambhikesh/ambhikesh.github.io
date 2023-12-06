@@ -1,1 +1,1 @@
-The website has been moved to https://ambhikesh.vercel.app
+The website has been moved [here](https://ambhikesh.vercel.app)
