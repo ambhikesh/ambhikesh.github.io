@@ -27,7 +27,7 @@ const Projects = ({ repositories }) => {
 };
 
 export async function getStaticProps() {
-  const accessToken = process.env.GITHUB_ACCESS_TOKEN;
+  const accessToken = process.env.ACCESS_TOKEN;
   const username = 'True-Fox';
 
   try {
