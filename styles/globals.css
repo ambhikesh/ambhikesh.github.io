@@ -56,6 +56,6 @@ footer {
 
 .ambhi-image{
   width: 350px;
-  -webkit-filter: drop-shadow(5px 5px 5px #573cf3);
-  filter: drop-shadow(5px 5px 5px #2b36ff2d);
+  -webkit-filter: drop-shadow(5px 5px 5px #030303);
+  filter: drop-shadow(5px 5px 5px #052e006e);
 }
