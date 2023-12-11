@@ -3,8 +3,8 @@ import Image from "next/image";
 const Navbar = () => {
     return(
         <nav>
-            <div className="logo ml-2">
-                <h1>Ambhikesh</h1>
+            <div className="logo ml-2 ">
+            <Link href="/">Ambhikesh</Link>
             </div>
             <Link href="/">Home</Link>
             <Link href="/projects">Projects</Link>
