@@ -1,14 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
 const Navbar = () => {
     return(
-        <nav>
+        <nav className="font-mono text-2xl">
             <div className="logo ml-2 ">
             <Link href="/">Ambhikesh</Link>
             </div>
             <Link href="/">Home</Link>
             <Link href="/projects">Projects</Link>
-            <Link href="/resume">Resume</Link>
+            <Link href="https://raw.githubusercontent.com/ambhikesh/ambhikesh.github.io/main/public/Ambhikesh.pdf">Resume</Link>
         </nav>
     );
 }
